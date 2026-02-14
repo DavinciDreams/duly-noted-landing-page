@@ -104,6 +104,16 @@ body {
     text-decoration: none;
 }
 
+.logo-svg {
+    height: 48px;
+    width: auto;
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover .logo-svg {
+    transform: scale(1.05);
+}
+
 .logo-icon {
     font-size: 1.75rem;
 }
