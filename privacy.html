@@ -158,7 +158,7 @@
         </div>
 
         <div class="highlight-box">
-            <p><strong>TL;DR:</strong> Duly Noted is privacy-first. Audio is deleted immediately after transcription. Only text is stored locally. We don't collect, sell, or share your data. Third-party integrations (GitHub, Notion, etc.) are optional and use your own API keys.</p>
+            <p><strong>TL;DR:</strong> Duly Noted is privacy-first. Audio is deleted immediately after transcription. Only text is stored locally. We don't collect, sell, or share your data. Third-party integrations (GitHub, Notion) are optional and use secure OAuth authentication.</p>
         </div>
 
         <div class="toc">
@@ -194,11 +194,12 @@
                 <li><strong>Draft notes</strong> remain on your device until you delete them or send them to a destination</li>
             </ul>
 
-            <h3>1.3 Settings and Preferences</h3>
+            <h3>1.3 OAuth Tokens and Settings</h3>
             <p>We store your extension settings locally:</p>
             <ul>
-                <li><strong>API keys</strong> for third-party integrations (GitHub, Notion, OneNote) - stored encrypted in chrome.storage.local</li>
-                <li><strong>User preferences</strong> (max recording duration, default destination, etc.)</li>
+                <li><strong>OAuth access tokens</strong> for third-party integrations (GitHub, Notion) - stored securely in chrome.storage.local</li>
+                <li><strong>OAuth credentials</strong> (stored in .env file during development, or configured via OAuth apps)</li>
+                <li><strong>User preferences</strong> (max recording duration, transcription language, etc.)</li>
                 <li><strong>Extension configuration</strong> settings</li>
             </ul>
 
@@ -224,12 +225,14 @@
                 <li><strong>History tracking:</strong> Displaying your recent notes and their destinations</li>
             </ul>
 
-            <h3>2.2 Third-Party API Access</h3>
-            <p>When you connect third-party services:</p>
+            <h3>2.2 Third-Party OAuth Access</h3>
+            <p>When you connect third-party services via OAuth:</p>
             <ul>
-                <li>We use <strong>your API keys</strong> to authenticate requests on your behalf</li>
-                <li>We send <strong>only the transcribed text</strong> you choose to send</li>
+                <li>We use <strong>OAuth 2.0</strong> to securely authenticate with GitHub and Notion</li>
+                <li>We request <strong>minimal permissions</strong> necessary for core functionality</li>
+                <li>We send <strong>only the transcribed text</strong> you explicitly choose to send</li>
                 <li>We do <strong>not store copies</strong> of data sent to third-party services</li>
+                <li><strong>OAuth tokens</strong> are stored securely in chrome.storage.local and never transmitted to our servers</li>
             </ul>
 
             <p><strong>We NEVER:</strong></p>
@@ -265,9 +268,10 @@
             <h3>3.3 Security Measures</h3>
             <ul>
                 <li><strong>No network transmission</strong> of voice data or drafts (except to your chosen third-party destinations)</li>
-                <li><strong>Encrypted storage</strong> for API keys and sensitive settings</li>
-                <li><strong>Minimal permissions:</strong> Extension requests only necessary Chrome permissions</li>
-                <li><strong>Open source:</strong> Code is publicly auditable (GitHub repository)</li>
+                <li><strong>Secure token storage:</strong> OAuth tokens stored in chrome.storage.local (Chrome's encrypted storage)</li>
+                <li><strong>OAuth 2.0 authentication:</strong> Industry-standard secure authentication flow</li>
+                <li><strong>Minimal permissions:</strong> Extension requests only necessary Chrome permissions (storage, sidePanel, identity)</li>
+                <li><strong>Open source:</strong> Code is publicly auditable on <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">GitHub</a></li>
             </ul>
         </div>
 
@@ -277,10 +281,13 @@
             <h3>4.1 Optional Integrations</h3>
             <p>Duly Noted integrates with third-party services <strong>at your discretion</strong>:</p>
             <ul>
-                <li><strong>GitHub (Issues & Projects):</strong> Requires your GitHub personal access token</li>
-                <li><strong>Notion:</strong> Requires your Notion integration token (coming soon)</li>
-                <li><strong>OneNote:</strong> Requires Microsoft OAuth authentication (coming soon)</li>
-                <li><strong>Affine:</strong> Requires your Affine API key (coming soon)</li>
+                <li><strong>GitHub (Issues & Projects):</strong> OAuth 2.0 authentication with minimal required permissions</li>
+                <li><strong>Notion (Databases & Pages):</strong> OAuth 2.0 authentication with workspace access</li>
+            </ul>
+            <p><strong>Permissions Requested:</strong></p>
+            <ul>
+                <li><strong>GitHub:</strong> Read/write access to issues and projects in repositories you select</li>
+                <li><strong>Notion:</strong> Read/write access to databases and pages you grant access to</li>
             </ul>
 
             <h3>4.2 Third-Party Privacy Policies</h3>
@@ -288,16 +295,17 @@
             <ul>
                 <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a></li>
                 <li><a href="https://www.notion.so/Privacy-Policy-3468d120cf614d4c9014c09f6adc9091" target="_blank">Notion Privacy Policy</a></li>
-                <li><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">Microsoft Privacy Statement (OneNote)</a></li>
             </ul>
+            <p><strong>Note:</strong> Duly Noted does not share any data with these services except the notes you explicitly choose to send.</p>
 
             <h3>4.3 Data Sharing</h3>
             <p>When you send a note to a third-party service:</p>
             <ul>
                 <li>We transmit <strong>only the text content</strong> you explicitly choose to send</li>
-                <li>We use <strong>your API credentials</strong> for authentication</li>
+                <li>We use <strong>OAuth tokens</strong> you authorized for authentication</li>
                 <li>We <strong>do not share</strong> any other data (metadata, drafts, settings, etc.)</li>
                 <li>We <strong>do not track</strong> what you send or where you send it</li>
+                <li>All API calls are made <strong>directly from your browser</strong> to the third-party service (no intermediary servers)</li>
             </ul>
         </div>
 
@@ -332,7 +340,8 @@
             <ul>
                 <li>You can choose <strong>not to use</strong> third-party integrations</li>
                 <li>You can save notes as <strong>local drafts only</strong></li>
-                <li>You can <strong>revoke API access</strong> at any time by deleting API keys from Settings</li>
+                <li>You can <strong>revoke OAuth access</strong> at any time by signing out in Settings</li>
+                <li>You can <strong>revoke OAuth app permissions</strong> directly in GitHub/Notion account settings</li>
             </ul>
         </div>
 
@@ -357,8 +366,10 @@
             <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
 
             <div class="contact-info">
-                <p><strong>Email:</strong> privacy@dulynoted.dev (placeholder - update when available)</p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/DavinciDreams/duly-noted-landing-page" target="_blank">https://github.com/DavinciDreams/duly-noted-landing-page</a></p>
+                <p><strong>Website:</strong> <a href="https://dulynoted.xyz" target="_blank">https://dulynoted.xyz</a></p>
+                <p><strong>Email:</strong> privacy@dulynoted.xyz</p>
+                <p><strong>GitHub (Extension):</strong> <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">https://github.com/DavinciDreams/duly-noted</a></p>
+                <p><strong>GitHub (Issues):</strong> <a href="https://github.com/DavinciDreams/duly-noted/issues" target="_blank">Report Privacy Concerns</a></p>
                 <p><strong>Response Time:</strong> We aim to respond within 7 business days</p>
             </div>
         </div>
@@ -380,7 +391,7 @@
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
                     <a href="index.html#features">Documentation</a>
-                    <a href="https://github.com/DavinciDreams/duly-noted-landing-page" target="_blank">GitHub</a>
+                    <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">GitHub</a>
                 </div>
             </div>
             <div class="footer-bottom">
