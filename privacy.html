@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Duly Noted - Voice notes Chrome extension">
+    <title>Privacy Policy - Duly Noted</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-page {
+            padding: calc(80px + var(--space-xl)) var(--space-lg) var(--space-3xl);
+            background: var(--bg-white);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: var(--space-sm);
+        }
+
+        .legal-updated {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .legal-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--text-dark);
+        }
+
+        .legal-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            color: var(--text-dark);
+        }
+
+        .legal-section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .legal-section ul, .legal-section ol {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+            margin-left: var(--space-lg);
+        }
+
+        .legal-section li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .highlight-box {
+            background: var(--bg-gray-50);
+            border-left: 4px solid var(--primary-blue);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .contact-info {
+            background: var(--bg-gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            transition: color var(--transition-fast);
+        }
+
+        .back-link:hover {
+            color: var(--primary-blue-dark);
+        }
+
+        .toc {
+            background: var(--bg-gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .toc h2 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .toc a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🎤</span>
+                    <span class="logo-text">Duly Noted</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-page">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="legal-header">
+            <h1>Privacy Policy</h1>
+            <p class="legal-updated">Last Updated: February 14, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>TL;DR:</strong> Duly Noted is privacy-first. Audio is deleted immediately after transcription. Only text is stored locally. We don't collect, sell, or share your data. Third-party integrations (GitHub, Notion, etc.) are optional and use your own API keys.</p>
+        </div>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#information-we-collect">1. Information We Collect</a></li>
+                <li><a href="#how-we-use">2. How We Use Your Information</a></li>
+                <li><a href="#data-storage">3. Data Storage and Security</a></li>
+                <li><a href="#third-party">4. Third-Party Services</a></li>
+                <li><a href="#your-rights">5. Your Rights and Choices</a></li>
+                <li><a href="#children">6. Children's Privacy</a></li>
+                <li><a href="#changes">7. Changes to This Policy</a></li>
+                <li><a href="#contact">8. Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="information-we-collect">
+            <h2>1. Information We Collect</h2>
+
+            <h3>1.1 Voice Recordings (Temporary)</h3>
+            <p>When you record a voice note:</p>
+            <ul>
+                <li><strong>Audio is captured temporarily</strong> using your browser's Web Speech API for real-time transcription</li>
+                <li><strong>Audio is deleted immediately</strong> after transcription is complete</li>
+                <li><strong>No audio files are stored</strong> locally or transmitted to any server</li>
+            </ul>
+
+            <h3>1.2 Transcribed Text</h3>
+            <p>After transcription:</p>
+            <ul>
+                <li><strong>Text transcripts</strong> are stored locally in your browser's chrome.storage.local</li>
+                <li><strong>Timestamps and metadata</strong> (creation date, destination type) are stored with each note</li>
+                <li><strong>Draft notes</strong> remain on your device until you delete them or send them to a destination</li>
+            </ul>
+
+            <h3>1.3 Settings and Preferences</h3>
+            <p>We store your extension settings locally:</p>
+            <ul>
+                <li><strong>API keys</strong> for third-party integrations (GitHub, Notion, OneNote) - stored encrypted in chrome.storage.local</li>
+                <li><strong>User preferences</strong> (max recording duration, default destination, etc.)</li>
+                <li><strong>Extension configuration</strong> settings</li>
+            </ul>
+
+            <h3>1.4 What We DON'T Collect</h3>
+            <ul>
+                <li>❌ No analytics or tracking data</li>
+                <li>❌ No personal information (name, email, etc.)</li>
+                <li>❌ No usage statistics or telemetry</li>
+                <li>❌ No cookies or persistent identifiers</li>
+                <li>❌ No IP addresses or location data</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="how-we-use">
+            <h2>2. How We Use Your Information</h2>
+
+            <h3>2.1 Core Functionality</h3>
+            <p>We use your data solely to provide the extension's core features:</p>
+            <ul>
+                <li><strong>Voice transcription:</strong> Converting speech to text in real-time</li>
+                <li><strong>Draft storage:</strong> Saving notes locally for later use</li>
+                <li><strong>Integration dispatch:</strong> Sending notes to your chosen destinations (GitHub, Notion, etc.)</li>
+                <li><strong>History tracking:</strong> Displaying your recent notes and their destinations</li>
+            </ul>
+
+            <h3>2.2 Third-Party API Access</h3>
+            <p>When you connect third-party services:</p>
+            <ul>
+                <li>We use <strong>your API keys</strong> to authenticate requests on your behalf</li>
+                <li>We send <strong>only the transcribed text</strong> you choose to send</li>
+                <li>We do <strong>not store copies</strong> of data sent to third-party services</li>
+            </ul>
+
+            <p><strong>We NEVER:</strong></p>
+            <ul>
+                <li>❌ Transmit your data to our servers (we don't have any)</li>
+                <li>❌ Share your data with advertisers or data brokers</li>
+                <li>❌ Use your data for machine learning or AI training</li>
+                <li>❌ Sell or monetize your information</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="data-storage">
+            <h2>3. Data Storage and Security</h2>
+
+            <h3>3.1 Local Storage</h3>
+            <p>All data is stored locally on your device:</p>
+            <ul>
+                <li><strong>Storage location:</strong> Chrome's chrome.storage.local API</li>
+                <li><strong>Encryption:</strong> API keys are encrypted before storage</li>
+                <li><strong>Access:</strong> Only Duly Noted extension can access this data</li>
+                <li><strong>Persistence:</strong> Data persists until you delete it or uninstall the extension</li>
+            </ul>
+
+            <h3>3.2 Data Deletion</h3>
+            <p>You can delete your data at any time:</p>
+            <ul>
+                <li><strong>Individual notes:</strong> Delete from the History screen</li>
+                <li><strong>All drafts:</strong> Clear all drafts from Settings</li>
+                <li><strong>Settings:</strong> Reset to defaults from Settings</li>
+                <li><strong>Complete removal:</strong> Uninstalling the extension deletes all local data</li>
+            </ul>
+
+            <h3>3.3 Security Measures</h3>
+            <ul>
+                <li><strong>No network transmission</strong> of voice data or drafts (except to your chosen third-party destinations)</li>
+                <li><strong>Encrypted storage</strong> for API keys and sensitive settings</li>
+                <li><strong>Minimal permissions:</strong> Extension requests only necessary Chrome permissions</li>
+                <li><strong>Open source:</strong> Code is publicly auditable (GitHub repository)</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="third-party">
+            <h2>4. Third-Party Services</h2>
+
+            <h3>4.1 Optional Integrations</h3>
+            <p>Duly Noted integrates with third-party services <strong>at your discretion</strong>:</p>
+            <ul>
+                <li><strong>GitHub (Issues & Projects):</strong> Requires your GitHub personal access token</li>
+                <li><strong>Notion:</strong> Requires your Notion integration token (coming soon)</li>
+                <li><strong>OneNote:</strong> Requires Microsoft OAuth authentication (coming soon)</li>
+                <li><strong>Affine:</strong> Requires your Affine API key (coming soon)</li>
+            </ul>
+
+            <h3>4.2 Third-Party Privacy Policies</h3>
+            <p>When you use these integrations, their respective privacy policies apply:</p>
+            <ul>
+                <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a></li>
+                <li><a href="https://www.notion.so/Privacy-Policy-3468d120cf614d4c9014c09f6adc9091" target="_blank">Notion Privacy Policy</a></li>
+                <li><a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">Microsoft Privacy Statement (OneNote)</a></li>
+            </ul>
+
+            <h3>4.3 Data Sharing</h3>
+            <p>When you send a note to a third-party service:</p>
+            <ul>
+                <li>We transmit <strong>only the text content</strong> you explicitly choose to send</li>
+                <li>We use <strong>your API credentials</strong> for authentication</li>
+                <li>We <strong>do not share</strong> any other data (metadata, drafts, settings, etc.)</li>
+                <li>We <strong>do not track</strong> what you send or where you send it</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="your-rights">
+            <h2>5. Your Rights and Choices</h2>
+
+            <h3>5.1 Data Access</h3>
+            <p>You have full access to all data stored by Duly Noted:</p>
+            <ul>
+                <li>View all notes in the History screen</li>
+                <li>Access settings and API keys in the Settings screen</li>
+                <li>Inspect chrome.storage.local via Chrome DevTools</li>
+            </ul>
+
+            <h3>5.2 Data Deletion</h3>
+            <p>You can delete your data at any time:</p>
+            <ul>
+                <li><strong>Individual notes:</strong> Click delete icon in History</li>
+                <li><strong>All data:</strong> Settings → Reset to Defaults</li>
+                <li><strong>Complete removal:</strong> Uninstall the extension</li>
+            </ul>
+
+            <h3>5.3 Data Portability</h3>
+            <p>Your data is yours:</p>
+            <ul>
+                <li>Export individual notes by copying the text</li>
+                <li>Access raw data via Chrome DevTools (chrome.storage.local)</li>
+                <li>Backup your notes by exporting to your preferred destination</li>
+            </ul>
+
+            <h3>5.4 Opt-Out of Features</h3>
+            <ul>
+                <li>You can choose <strong>not to use</strong> third-party integrations</li>
+                <li>You can save notes as <strong>local drafts only</strong></li>
+                <li>You can <strong>revoke API access</strong> at any time by deleting API keys from Settings</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="children">
+            <h2>6. Children's Privacy</h2>
+            <p>Duly Noted is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us, and we will delete such information.</p>
+        </div>
+
+        <div class="legal-section" id="changes">
+            <h2>7. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this Privacy Policy periodically.</p>
+            <p>For significant changes, we will notify users via:</p>
+            <ul>
+                <li>In-extension notification banner</li>
+                <li>Update notes in the Chrome Web Store</li>
+                <li>GitHub repository changelog</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="contact">
+            <h2>8. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> privacy@dulynoted.dev (placeholder - update when available)</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/DavinciDreams/duly-noted-landing-page" target="_blank">https://github.com/DavinciDreams/duly-noted-landing-page</a></p>
+                <p><strong>Response Time:</strong> We aim to respond within 7 business days</p>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: var(--space-2xl);">
+            <p><strong>Summary:</strong> Duly Noted is built with privacy as a core principle. We don't collect, store, or share your data. Everything stays on your device. You have full control over your data at all times.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎤</span>
+                    <span class="logo-text">Duly Noted</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="index.html#features">Documentation</a>
+                    <a href="https://github.com/DavinciDreams/duly-noted-landing-page" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Duly Noted. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
