@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support & Troubleshooting for Duly Noted - Voice notes Chrome extension">
+    <title>Support - Duly Noted</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-page {
+            padding: calc(80px + var(--space-xl)) var(--space-lg) var(--space-3xl);
+            background: var(--bg-white);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .legal-header h1 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: var(--space-sm);
+        }
+
+        .legal-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .legal-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            color: var(--text-dark);
+        }
+
+        .legal-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            color: var(--text-dark);
+        }
+
+        .legal-section p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .legal-section ul, .legal-section ol {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+            margin-left: var(--space-lg);
+        }
+
+        .legal-section li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .highlight-box {
+            background: var(--bg-gray-50);
+            border-left: 4px solid var(--primary-blue);
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            color: #92400e;
+        }
+
+        .success-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: var(--space-md);
+            margin: var(--space-lg) 0;
+            border-radius: var(--radius-md);
+        }
+
+        .success-box p {
+            margin-bottom: 0;
+            color: #065f46;
+        }
+
+        .contact-info {
+            background: var(--bg-gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+            transition: color var(--transition-fast);
+        }
+
+        .back-link:hover {
+            color: var(--primary-blue-dark);
+        }
+
+        .toc {
+            background: var(--bg-gray-50);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .toc h2 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .toc a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: var(--bg-gray-50);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin-bottom: var(--space-md);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .troubleshoot-item {
+            background: var(--bg-gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .troubleshoot-item h4 {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .troubleshoot-item .solution h4 {
+            color: #16a34a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <img src="duly-noted-logo.svg" alt="Duly Noted Logo" class="logo-svg" />
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="support.html">Support</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="legal-page">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <div class="legal-header">
+            <h1>Support &amp; Troubleshooting</h1>
+            <p>Get help with Duly Noted. Find answers to common issues, setup guides, and debugging tips.</p>
+        </div>
+
+        <div class="toc">
+            <h2>Quick Navigation</h2>
+            <ul>
+                <li><a href="#getting-started">1. Getting Started</a></li>
+                <li><a href="#github-setup">2. GitHub Integration Setup</a></li>
+                <li><a href="#notion-setup">3. Notion Integration Setup</a></li>
+                <li><a href="#browser-compat">4. Browser Compatibility</a></li>
+                <li><a href="#troubleshooting">5. Troubleshooting</a></li>
+                <li><a href="#debugging">6. Debugging Tips</a></li>
+                <li><a href="#contact">7. Contact Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="legal-section" id="getting-started">
+            <h2>1. Getting Started</h2>
+
+            <h3>Installation</h3>
+            <ol>
+                <li>Install Duly Noted from the <a href="https://chrome.google.com/webstore" target="_blank">Chrome Web Store</a></li>
+                <li>Click the Duly Noted icon in your toolbar (or press <code>Alt+Shift+V</code>)</li>
+                <li>Grant microphone permission when prompted</li>
+                <li>Click "Start Recording" and speak your first note</li>
+                <li>Click "Stop &amp; Send" when done</li>
+                <li>Choose a destination: GitHub, Notion, or save as draft</li>
+            </ol>
+
+            <div class="highlight-box">
+                <p><strong>Tip:</strong> Pin the extension to your toolbar for quick access. Right-click the extensions puzzle icon and click the pin next to Duly Noted.</p>
+            </div>
+
+            <h3>Keyboard Shortcut</h3>
+            <p>Press <code>Alt+Shift+V</code> to open Duly Noted from anywhere in Chrome. You can customize this shortcut at <code>chrome://extensions/shortcuts</code>.</p>
+        </div>
+
+        <!-- GitHub Setup -->
+        <div class="legal-section" id="github-setup">
+            <h2>2. GitHub Integration Setup</h2>
+
+            <h3>Connecting Your GitHub Account</h3>
+            <ol>
+                <li>Open Duly Noted and click the <strong>Settings</strong> icon</li>
+                <li>Scroll to <strong>GitHub Integration</strong></li>
+                <li>Click <strong>"Sign in with GitHub"</strong></li>
+                <li>A popup will open asking you to authorize the app</li>
+                <li>Click <strong>"Authorize"</strong> on GitHub</li>
+                <li>The popup closes and you'll see "Connected" in settings</li>
+            </ol>
+
+            <div class="success-box">
+                <p><strong>That's it!</strong> You can now send voice notes to GitHub Issues and Projects. Your OAuth credentials are stored securely in Chrome's local storage.</p>
+            </div>
+
+            <h3>Sending Notes to GitHub Issues</h3>
+            <ol>
+                <li>After recording, click the <strong>"GitHub Issue"</strong> button</li>
+                <li>Select a repository from the dropdown</li>
+                <li>Edit the title and body if needed</li>
+                <li>Click <strong>"Create Issue"</strong></li>
+            </ol>
+
+            <h3>Sending Notes to GitHub Projects</h3>
+            <ol>
+                <li>After recording, click the <strong>"GitHub Project"</strong> button</li>
+                <li>Select a repository, then select a project</li>
+                <li>Edit the title and body if needed</li>
+                <li>Click <strong>"Add to Project"</strong></li>
+            </ol>
+
+            <h3>Disconnecting GitHub</h3>
+            <p>Go to Settings &rarr; GitHub Integration &rarr; <strong>"Sign Out"</strong>. You can also revoke access from <a href="https://github.com/settings/applications" target="_blank">GitHub &rarr; Settings &rarr; Applications</a>.</p>
+        </div>
+
+        <!-- Notion Setup -->
+        <div class="legal-section" id="notion-setup">
+            <h2>3. Notion Integration Setup</h2>
+
+            <h3>Connecting Your Notion Workspace</h3>
+            <ol>
+                <li>Open Duly Noted and click the <strong>Settings</strong> icon</li>
+                <li>Scroll to <strong>Notion Integration</strong></li>
+                <li>Click <strong>"Sign in with Notion"</strong></li>
+                <li>Select your workspace in the popup</li>
+                <li>Choose which pages/databases to grant access to</li>
+                <li>Click <strong>"Allow access"</strong></li>
+            </ol>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> After connecting, you need to grant the integration access to specific pages or databases in Notion. Open a page in Notion &rarr; click "..." menu &rarr; "Add connections" &rarr; select "Duly Noted".</p>
+            </div>
+
+            <h3>Sending Notes to Notion</h3>
+            <ol>
+                <li>After recording, click the <strong>"Notion"</strong> button</li>
+                <li>The extension finds your accessible databases and pages</li>
+                <li>The first line of your note becomes the page title</li>
+                <li>The full transcription becomes the page content</li>
+                <li>Click the note in history to open it in Notion</li>
+            </ol>
+
+            <h3>Disconnecting Notion</h3>
+            <p>Go to Settings &rarr; Notion Integration &rarr; <strong>"Sign Out"</strong>. You can also revoke access from <a href="https://www.notion.so/my-integrations" target="_blank">Notion &rarr; Settings &rarr; My Integrations</a>.</p>
+        </div>
+
+        <!-- Browser Compatibility -->
+        <div class="legal-section" id="browser-compat">
+            <h2>4. Browser Compatibility</h2>
+
+            <h3>Fully Supported</h3>
+            <ul>
+                <li><strong>Google Chrome</strong> (version 114+) &mdash; Recommended</li>
+                <li><strong>Microsoft Edge</strong> (Chromium-based)</li>
+            </ul>
+
+            <h3>Limited Support: Brave Browser</h3>
+            <p>Brave blocks Google services by default, which prevents the Web Speech API from working. To fix this:</p>
+            <ol>
+                <li>Open <code>brave://settings/shields</code></li>
+                <li>Under <strong>"Sites that can always use Google services"</strong>, add the extension</li>
+                <li>Alternatively, temporarily lower Shields for the extension</li>
+            </ol>
+            <p>Or simply use Chrome or Edge for the best experience.</p>
+
+            <h3>Not Supported</h3>
+            <ul>
+                <li><strong>Firefox</strong> &mdash; Does not support Web Speech API or Chrome extensions</li>
+                <li><strong>Safari</strong> &mdash; Limited Web Speech API support, no Chrome extension support</li>
+            </ul>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="legal-section" id="troubleshooting">
+            <h2>5. Troubleshooting</h2>
+
+            <div class="troubleshoot-item">
+                <h4>"URI mismatch" error when signing in to GitHub or Notion</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>This usually means the extension ID doesn't match what the OAuth app expects. If you installed from the Chrome Web Store, this should not happen. If you're running from source:</p>
+                    <ol>
+                        <li>Check your extension ID at <code>chrome://extensions/</code></li>
+                        <li>Ensure the redirect URI in your GitHub/Notion OAuth app matches your extension ID</li>
+                        <li>Reload the extension and try again</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>No transcription appearing when recording</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol>
+                        <li>Check microphone permission at <code>chrome://settings/content/microphone</code></li>
+                        <li>Verify your browser supports Web Speech API (Chrome or Edge)</li>
+                        <li>Check your internet connection &mdash; Web Speech API requires internet</li>
+                        <li>Try speaking louder or closer to the microphone</li>
+                        <li>Check that no other app is using the microphone</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>Notion button is grayed out / disabled</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol>
+                        <li>Open Settings &rarr; Notion Integration</li>
+                        <li>Click "Sign in with Notion" and complete the OAuth flow</li>
+                        <li>After connecting, grant access to pages/databases in Notion ("..." menu &rarr; "Add connections" &rarr; "Duly Noted")</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>"No databases or pages found" error in Notion</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>Your Notion integration needs access to at least one page or database:</p>
+                    <ol>
+                        <li>Open any page in Notion</li>
+                        <li>Click the "..." menu in the top right</li>
+                        <li>Click "Add connections"</li>
+                        <li>Select "Duly Noted"</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>"API rate limit exceeded" error on GitHub</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>GitHub rate limits API requests. Wait about an hour for the limit to reset. Using OAuth authentication (which Duly Noted uses by default) provides a much higher rate limit than anonymous access.</p>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>Extension crashes or stops working</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol>
+                        <li>Go to <code>chrome://extensions/</code></li>
+                        <li>Click the reload button on Duly Noted</li>
+                        <li>If the issue persists, go to Settings &rarr; Advanced &rarr; <strong>Clear All Data</strong></li>
+                        <li>As a last resort, uninstall and reinstall the extension</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="troubleshoot-item">
+                <h4>OAuth popup doesn't open or closes immediately</h4>
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol>
+                        <li>Check that your browser allows popups for extensions</li>
+                        <li>Disable any popup blockers temporarily</li>
+                        <li>Try reloading the extension at <code>chrome://extensions/</code></li>
+                        <li>Make sure you're using Chrome or Edge (not Brave with strict shields)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debugging -->
+        <div class="legal-section" id="debugging">
+            <h2>6. Debugging Tips</h2>
+            <p>If you're a developer or want to investigate issues more deeply:</p>
+
+            <h3>Service Worker Console</h3>
+            <ol>
+                <li>Go to <code>chrome://extensions/</code></li>
+                <li>Find Duly Noted and click the <strong>"service worker"</strong> link</li>
+                <li>The console shows background logs and errors</li>
+            </ol>
+
+            <h3>Side Panel Console</h3>
+            <ol>
+                <li>Right-click inside the Duly Noted side panel</li>
+                <li>Select <strong>"Inspect"</strong></li>
+                <li>The console shows UI logs and errors</li>
+            </ol>
+
+            <h3>View Stored Data</h3>
+            <p>Open any extension console and run:</p>
+            <pre><code>chrome.storage.local.get(null, (data) => console.log(data));</code></pre>
+
+            <h3>Clear All Extension Data</h3>
+            <p>Use the in-app option (Settings &rarr; Advanced &rarr; Clear All Data) or run in the console:</p>
+            <pre><code>chrome.storage.local.clear();</code></pre>
+
+            <h3>Report a Bug</h3>
+            <p>If you've found a bug, please <a href="https://github.com/DavinciDreams/duly-noted/issues" target="_blank">open an issue on GitHub</a> with:</p>
+            <ul>
+                <li>Steps to reproduce the problem</li>
+                <li>Error messages from the console (if any)</li>
+                <li>Your Chrome version and OS</li>
+                <li>Extension version (shown in Settings)</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="legal-section" id="contact">
+            <h2>7. Contact Support</h2>
+            <p>Need more help? Reach out through any of these channels:</p>
+
+            <div class="contact-info">
+                <p><strong>GitHub Issues:</strong> <a href="https://github.com/DavinciDreams/duly-noted/issues" target="_blank">Report bugs or request features</a></p>
+                <p><strong>GitHub Discussions:</strong> <a href="https://github.com/DavinciDreams/duly-noted/discussions" target="_blank">Ask questions and share feedback</a></p>
+                <p><strong>Email:</strong> support@dulynoted.xyz</p>
+                <p><strong>Website:</strong> <a href="https://dulynoted.xyz" target="_blank">dulynoted.xyz</a></p>
+                <p><strong>Response Time:</strong> We aim to respond within 7 business days</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="duly-noted-logo.svg" alt="Duly Noted Logo" class="logo-svg" />
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="support.html">Support</a>
+                    <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Duly Noted. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
