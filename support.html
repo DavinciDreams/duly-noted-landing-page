@@ -334,23 +334,27 @@
 
             <h3>Fully Supported</h3>
             <ul>
-                <li><strong>Google Chrome</strong> (version 114+) &mdash; Recommended</li>
-                <li><strong>Microsoft Edge</strong> (Chromium-based)</li>
+                <li><strong>Google Chrome</strong> (version 114+) &mdash; Uses Web Speech API for instant transcription</li>
+                <li><strong>Microsoft Edge</strong> (Chromium-based) &mdash; Uses Web Speech API for instant transcription</li>
+                <li><strong>Brave Browser</strong> &mdash; Uses built-in whisper.cpp AI for on-device transcription (no Google services needed)</li>
             </ul>
 
-            <h3>Limited Support: Brave Browser</h3>
-            <p>Brave blocks Google services by default, which prevents the Web Speech API from working. To fix this:</p>
-            <ol>
-                <li>Open <code>brave://settings/shields</code></li>
-                <li>Under <strong>"Sites that can always use Google services"</strong>, add the extension</li>
-                <li>Alternatively, temporarily lower Shields for the extension</li>
-            </ol>
-            <p>Or simply use Chrome or Edge for the best experience.</p>
+            <div class="success-box">
+                <p><strong>Brave users:</strong> Duly Noted automatically detects Brave and uses on-device AI transcription powered by whisper.cpp. No configuration needed &mdash; it just works. Transcription may take a few seconds longer than Chrome since it runs locally on your machine.</p>
+            </div>
+
+            <h3>How Transcription Works</h3>
+            <p>Duly Noted uses two transcription engines and automatically picks the best one for your browser:</p>
+            <ul>
+                <li><strong>Web Speech API</strong> (Chrome, Edge) &mdash; Near-instant results, requires internet connection</li>
+                <li><strong>whisper.cpp WASM</strong> (Brave) &mdash; On-device AI, works offline, ~3-5 second processing time per segment</li>
+            </ul>
+            <p>Both engines are fully private. Audio is never stored or sent to Duly Noted's servers.</p>
 
             <h3>Not Supported</h3>
             <ul>
-                <li><strong>Firefox</strong> &mdash; Does not support Web Speech API or Chrome extensions</li>
-                <li><strong>Safari</strong> &mdash; Limited Web Speech API support, no Chrome extension support</li>
+                <li><strong>Firefox</strong> &mdash; Does not support Chrome/Chromium extensions</li>
+                <li><strong>Safari</strong> &mdash; Does not support Chrome/Chromium extensions</li>
             </ul>
         </div>
 
@@ -377,10 +381,10 @@
                     <h4>Solution</h4>
                     <ol>
                         <li>Check microphone permission at <code>chrome://settings/content/microphone</code></li>
-                        <li>Verify your browser supports Web Speech API (Chrome or Edge)</li>
-                        <li>Check your internet connection &mdash; Web Speech API requires internet</li>
-                        <li>Try speaking louder or closer to the microphone</li>
                         <li>Check that no other app is using the microphone</li>
+                        <li>Try speaking louder or closer to the microphone</li>
+                        <li><strong>Chrome/Edge:</strong> Check your internet connection &mdash; Web Speech API requires internet</li>
+                        <li><strong>Brave:</strong> On-device transcription takes a few seconds to process. Wait for "Processing audio..." to finish after stopping the recording. The first recording may take longer while the AI model loads</li>
                     </ol>
                 </div>
             </div>
@@ -440,7 +444,7 @@
                         <li>Check that your browser allows popups for extensions</li>
                         <li>Disable any popup blockers temporarily</li>
                         <li>Try reloading the extension at <code>chrome://extensions/</code></li>
-                        <li>Make sure you're using Chrome or Edge (not Brave with strict shields)</li>
+                        <li>Make sure you're using a supported browser (Chrome, Edge, or Brave)</li>
                     </ol>
                 </div>
             </div>

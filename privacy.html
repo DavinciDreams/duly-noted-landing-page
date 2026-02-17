@@ -182,9 +182,10 @@
             <h3>1.1 Voice Recordings (Temporary)</h3>
             <p>When you record a voice note:</p>
             <ul>
-                <li><strong>Audio is captured temporarily</strong> using your browser's Web Speech API for real-time transcription</li>
+                <li><strong>Audio is captured temporarily</strong> for real-time transcription. On Chrome and Edge, transcription uses the browser's built-in Web Speech API. On Brave, transcription uses an on-device AI model (whisper.cpp) that runs entirely in your browser</li>
                 <li><strong>Audio is deleted immediately</strong> after transcription is complete</li>
                 <li><strong>No audio files are stored</strong> locally or transmitted to any server</li>
+                <li><strong>On-device AI transcription</strong> (Brave) processes audio entirely within your browser using WebAssembly &mdash; no audio data leaves your device</li>
             </ul>
 
             <h3>1.2 Transcribed Text</h3>
@@ -220,7 +221,7 @@
             <h3>2.1 Core Functionality</h3>
             <p>We use your data solely to provide the extension's core features:</p>
             <ul>
-                <li><strong>Voice transcription:</strong> Converting speech to text in real-time</li>
+                <li><strong>Voice transcription:</strong> Converting speech to text using your browser's speech engine or on-device AI</li>
                 <li><strong>Draft storage:</strong> Saving notes locally for later use</li>
                 <li><strong>Integration dispatch:</strong> Sending notes to your chosen destinations (GitHub, Notion, etc.)</li>
                 <li><strong>History tracking:</strong> Displaying your recent notes and their destinations</li>

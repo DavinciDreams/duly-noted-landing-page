@@ -203,10 +203,10 @@
 
         <div class="legal-section" id="description">
             <h2>2. Description of Service</h2>
-            <p>Duly Noted is a Chrome browser extension that provides the following features:</p>
+            <p>Duly Noted is a browser extension for Chromium-based browsers that provides the following features:</p>
             <ul>
                 <li><strong>Voice recording:</strong> Capture voice notes using your device's microphone</li>
-                <li><strong>Real-time transcription:</strong> Convert speech to text using Web Speech API</li>
+                <li><strong>Real-time transcription:</strong> Convert speech to text using your browser's Web Speech API (Chrome, Edge) or on-device AI via whisper.cpp (Brave)</li>
                 <li><strong>Local storage:</strong> Save transcribed notes as drafts on your device</li>
                 <li><strong>Third-party integrations:</strong> Send notes to GitHub Issues, GitHub Projects, or Notion</li>
                 <li><strong>History tracking:</strong> View and manage your recorded notes</li>
@@ -220,7 +220,7 @@
             <ul>
                 <li>Be at least <strong>13 years of age</strong> (or the age of majority in your jurisdiction)</li>
                 <li>Have the legal capacity to enter into binding agreements</li>
-                <li>Use a supported version of <strong>Google Chrome</strong> (version 114 or later)</li>
+                <li>Use a supported Chromium-based browser: <strong>Google Chrome</strong> (version 114+), <strong>Microsoft Edge</strong>, or <strong>Brave</strong></li>
                 <li>Comply with all applicable laws and regulations in your jurisdiction</li>
             </ul>
             <p>By using the Service, you represent and warrant that you meet these eligibility requirements.</p>
@@ -345,8 +345,8 @@
             <ul>
                 <li>Audio quality and background noise</li>
                 <li>Speaker accent, clarity, and pronunciation</li>
-                <li>Web Speech API performance (provided by Google/Chrome)</li>
-                <li>Internet connectivity</li>
+                <li>Transcription engine: Web Speech API (Chrome, Edge) or whisper.cpp on-device AI (Brave)</li>
+                <li>Internet connectivity (required for Web Speech API; not required for on-device AI)</li>
             </ul>
             <p>You should review and edit transcriptions before using them for important purposes.</p>
 
