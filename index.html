@@ -3,25 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Duly Noted - Capture voice notes with real-time transcription. Send to GitHub, Notion, and more. Never lose a great idea again.">
+    <meta name="description" content="Duly Noted - Capture voice notes with real-time transcription. Send to GitHub Issues, Projects, Notion, or save as drafts. Free and private.">
     <meta name="google-site-verification" content="z5Q6KqkJ62Rq70U9yE23CnW7aVgDeBHE_Z0TxajlbCA" />
     <title>Duly Noted - Voice Notes for Developers</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Prevent theme flash -->
+    <script>
+      (function(){var t=localStorage.getItem('dn-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)})();
+    </script>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="container">
             <div class="nav-content">
-                <div class="logo">
-                    <img src="duly-noted-logo.svg" alt="Duly Noted Logo" class="logo-svg" />
-                </div>
+                <a href="/" class="logo">
+                    <img src="duly-noted-logo.svg" alt="Duly Noted" class="logo-svg" />
+                    <span class="logo-text">Duly Noted</span>
+                </a>
                 <div class="nav-links">
                     <a href="#features">Features</a>
+                    <a href="#screenshots">Screenshots</a>
                     <a href="#how-it-works">How It Works</a>
                     <a href="#integrations">Integrations</a>
-                    <a href="#download" class="btn-primary">Get Extension</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                        <!-- Sun icon (shown in dark mode) -->
+                        <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon icon (shown in light mode) -->
+                        <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <!-- Monitor icon (shown in system/auto mode) -->
+                        <svg class="theme-icon theme-icon-system" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </button>
+                    <a href="#download" class="btn-primary nav-cta">Get Extension</a>
                 </div>
             </div>
         </div>
@@ -32,28 +68,27 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Capture Voice Notes.<br>
-                    <span class="gradient-text">Never Lose An Idea.</span>
+                    Your Voice. Your Workflow.<br>
+                    <span class="gradient-text">Perfectly Connected.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Real-time transcription. Send to GitHub Issues, Projects, or Notion in seconds.
-                    Perfect for developers, product managers, and knowledge workers.
+                    Capture ideas with real-time voice transcription. Send to GitHub Issues,
+                    GitHub Projects, or Notion in seconds. Save as drafts when you're not sure yet.
+                    Perfect for developers, product managers, and anyone who thinks faster than they type.
                 </p>
                 <div class="hero-cta">
                     <a href="#download" class="btn-large btn-primary">
                         <span>Add to Chrome</span>
                         <span class="arrow">&rarr;</span>
                     </a>
-                    <a href="#demo" class="btn-large btn-secondary">
-                        <span>Watch Demo</span>
+                    <a href="#screenshots" class="btn-large btn-secondary">
+                        <span>See It In Action</span>
                     </a>
                 </div>
-                <p class="hero-note">
-                    &check; Free &bull; &check; Privacy-focused &bull; &check; No signup required
-                </p>
+                <p class="hero-note">&check; Free &bull; &check; Privacy-focused &bull; &check; No signup required</p>
             </div>
         </div>
-    </nav>
+    </section>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -85,52 +120,172 @@
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎙️</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
                     <h3 class="feature-title">Real-Time Transcription</h3>
                     <p class="feature-description">
-                        See your words transcribed as you speak. Powered by Web Speech API for instant, accurate results.
+                        Record and watch your words appear instantly. Powered by the Web Speech API built into Chrome - no external services, no cloud processing.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <h3 class="feature-title">Save as Drafts</h3>
-                    <p class="feature-description">
-                        Don't know where it belongs yet? Save locally and decide later. Zero external dependencies.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🐙</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </div>
                     <h3 class="feature-title">GitHub Integration</h3>
                     <p class="feature-description">
-                        Send to GitHub Issues (production) or GitHub Projects (idea backlog). Choose based on readiness.
+                        Create GitHub Issues for production-ready tasks or add to GitHub Projects for your idea backlog. Pick any repo you have access to.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📓</div>
-                    <h3 class="feature-title">Note-Taking Apps</h3>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Notion Integration</h3>
                     <p class="feature-description">
-                        Dispatch to Notion databases or pages. Perfect for cross-project ideas and personal knowledge.
+                        Send notes to Notion databases or pages. First line becomes the title, full transcription becomes content. Perfect for knowledge management.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📜</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Local Drafts</h3>
+                    <p class="feature-description">
+                        Not sure where it belongs? Save locally and decide later. Zero external dependencies - nothing leaves your browser.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
                     <h3 class="feature-title">Unified History</h3>
                     <p class="feature-description">
-                        Track all notes regardless of destination. Click to open created issues, pages, or drafts.
+                        Every note tracked with timestamps and direct links. Click to open the GitHub issue, Notion page, or local draft - instantly.
                     </p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
                     <h3 class="feature-title">Privacy First</h3>
                     <p class="feature-description">
-                        Audio deleted immediately after transcription. Only text is stored. Your data stays yours.
+                        Audio is processed locally and deleted immediately. Only text is stored in your browser. No servers, no analytics, no tracking.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">See It In Action</h2>
+            <p class="section-subtitle">A sleek side panel that stays out of your way until you need it</p>
+
+            <div class="screenshot-gallery">
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-main-dark.png"
+                            alt="Main recording screen with waveform visualizer in dark mode"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Record &amp; transcribe in dark mode</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-main-light.png"
+                            alt="Main recording screen in light mode"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Light mode for bright environments</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-settings-dark.png"
+                            alt="Settings page showing theme toggle and GitHub integration"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Customizable settings</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-settings-light.png"
+                            alt="Settings page in light mode"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Settings adapt to your theme</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-destinations-light.png"
+                            alt="Destination picker showing GitHub, Notion, and Draft options"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Choose your destination</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-github-issue-light.png"
+                            alt="GitHub Issue creation form with repository selector"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Create issues from voice</figcaption>
+                </figure>
+
+                <figure class="screenshot-card">
+                    <div class="screenshot-frame">
+                        <img
+                            src="assets/screenshots/screenshot-permission-dark.png"
+                            alt="Microphone permission dialog"
+                            loading="lazy"
+                        >
+                    </div>
+                    <figcaption>Simple microphone setup</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -145,33 +300,33 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3 class="step-title">Click Record</h3>
+                        <h3 class="step-title">Open Side Panel</h3>
                         <p class="step-description">
-                            Open the side panel (Alt+Shift+V) and click "Start Recording". Grant microphone permission once.
+                            Click the toolbar icon or press Alt+Shift+V. The side panel opens without leaving your current tab.
                         </p>
                     </div>
                 </div>
 
-                <div class="step-arrow">&rarr;</div>
+                <div class="step-arrow" aria-hidden="true">&rarr;</div>
 
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3 class="step-title">Speak Your Idea</h3>
                         <p class="step-description">
-                            Talk naturally. Watch your words appear in real-time as you speak. Stop when done.
+                            Hit record and talk naturally. Watch your words transcribe in real-time. Edit the text if needed.
                         </p>
                     </div>
                 </div>
 
-                <div class="step-arrow">&rarr;</div>
+                <div class="step-arrow" aria-hidden="true">&rarr;</div>
 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3 class="step-title">Choose Destination</h3>
                         <p class="step-description">
-                            Send to GitHub, Notion, or save as a draft. Your note is dispatched instantly.
+                            Send to GitHub Issues, GitHub Projects, Notion, or save as a local draft. Your note is dispatched instantly.
                         </p>
                     </div>
                 </div>
@@ -195,7 +350,7 @@
                 <div class="integration-card">
                     <div class="integration-icon">📋</div>
                     <h3>GitHub Projects</h3>
-                    <p>Idea backlog, no CI/CD</p>
+                    <p>Idea backlog</p>
                     <span class="integration-badge">Available Now</span>
                 </div>
 
@@ -223,22 +378,22 @@
 
             <div class="use-cases-grid">
                 <div class="use-case">
-                    <h3>👨‍💻 Developers</h3>
-                    <p>Capture bug reports, feature ideas, and technical thoughts without leaving your flow.</p>
+                    <h3>Developers</h3>
+                    <p>Capture bug reports, feature ideas, and technical thoughts without leaving your flow. Send directly to GitHub.</p>
                 </div>
 
                 <div class="use-case">
-                    <h3>📱 Product Managers</h3>
-                    <p>Log user feedback, feature requests, and insights during meetings or research.</p>
+                    <h3>Product Managers</h3>
+                    <p>Log user feedback, feature requests, and sprint ideas during meetings. Route to the right project board.</p>
                 </div>
 
                 <div class="use-case">
-                    <h3>📚 Researchers</h3>
-                    <p>Save insights while reading papers, watching talks, or conducting interviews.</p>
+                    <h3>Researchers</h3>
+                    <p>Save insights while reading papers, watching talks, or conducting interviews. Organize in Notion.</p>
                 </div>
 
                 <div class="use-case">
-                    <h3>✍️ Writers & Creators</h3>
+                    <h3>Writers &amp; Creators</h3>
                     <p>Capture ideas before they disappear. Edit and refine later when you have time.</p>
                 </div>
             </div>
@@ -250,18 +405,14 @@
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Ready to Stop Losing Ideas?</h2>
-                <p class="cta-subtitle">
-                    Join developers and knowledge workers who never lose a great idea again.
-                </p>
+                <p class="cta-subtitle">Join developers and knowledge workers who capture every thought.</p>
                 <div class="cta-buttons">
                     <a href="#" class="btn-large btn-primary">
                         <span>Add to Chrome - It's Free</span>
                         <span class="arrow">&rarr;</span>
                     </a>
                 </div>
-                <p class="cta-note">
-                    Available for Chrome 114+. Coming soon to Firefox and Edge.
-                </p>
+                <p class="cta-note">Available for Chrome 114+ and Microsoft Edge. Alt+Shift+V to open instantly.</p>
             </div>
         </div>
     </section>
@@ -277,7 +428,7 @@
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
                     <a href="support.html">Support</a>
-                    <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">GitHub</a>
+                    <a href="https://github.com/DavinciDreams/duly-noted" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -285,6 +436,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview" hidden>
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+    </div>
 
     <script src="script.js"></script>
 </body>
