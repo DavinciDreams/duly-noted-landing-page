@@ -150,11 +150,11 @@
     </nav>
 
     <div class="legal-page">
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
 
         <div class="legal-header">
             <h1>Privacy Policy</h1>
-            <p class="legal-updated">Last Updated: February 14, 2026</p>
+            <p class="legal-updated">Last Updated: February 16, 2026</p>
         </div>
 
         <div class="highlight-box">
@@ -197,19 +197,19 @@
             <h3>1.3 OAuth Tokens and Settings</h3>
             <p>We store your extension settings locally:</p>
             <ul>
-                <li><strong>OAuth access tokens</strong> for third-party integrations (GitHub, Notion) - stored securely in chrome.storage.local</li>
-                <li><strong>OAuth credentials</strong> (stored in .env file during development, or configured via OAuth apps)</li>
+                <li><strong>OAuth access tokens</strong> for third-party integrations (GitHub, Notion) - stored in chrome.storage.local</li>
+                <li><strong>OAuth credentials</strong> configured via secure OAuth apps</li>
                 <li><strong>User preferences</strong> (max recording duration, transcription language, etc.)</li>
                 <li><strong>Extension configuration</strong> settings</li>
             </ul>
 
             <h3>1.4 What We DON'T Collect</h3>
             <ul>
-                <li>❌ No analytics or tracking data</li>
-                <li>❌ No personal information (name, email, etc.)</li>
-                <li>❌ No usage statistics or telemetry</li>
-                <li>❌ No cookies or persistent identifiers</li>
-                <li>❌ No IP addresses or location data</li>
+                <li>&#10060; No analytics or tracking data</li>
+                <li>&#10060; No personal information (name, email, etc.)</li>
+                <li>&#10060; No usage statistics or telemetry</li>
+                <li>&#10060; No cookies or persistent identifiers</li>
+                <li>&#10060; No IP addresses or location data</li>
             </ul>
         </div>
 
@@ -232,15 +232,23 @@
                 <li>We request <strong>minimal permissions</strong> necessary for core functionality</li>
                 <li>We send <strong>only the transcribed text</strong> you explicitly choose to send</li>
                 <li>We do <strong>not store copies</strong> of data sent to third-party services</li>
-                <li><strong>OAuth tokens</strong> are stored securely in chrome.storage.local and never transmitted to our servers</li>
+                <li><strong>OAuth tokens</strong> are stored in chrome.storage.local and never transmitted to our servers for storage</li>
+            </ul>
+
+            <h3>2.3 OAuth Token Exchange</h3>
+            <p>During the OAuth sign-in process:</p>
+            <ul>
+                <li>Your <strong>authorization code</strong> is briefly processed by a stateless <strong>Cloudflare Worker</strong> to exchange it for an access token</li>
+                <li>The Cloudflare Worker <strong>does not store any data</strong> - it only relays the token exchange and returns the result to your browser</li>
+                <li>After the exchange, the access token is stored <strong>locally in your browser</strong> only</li>
             </ul>
 
             <p><strong>We NEVER:</strong></p>
             <ul>
-                <li>❌ Transmit your data to our servers (we don't have any)</li>
-                <li>❌ Share your data with advertisers or data brokers</li>
-                <li>❌ Use your data for machine learning or AI training</li>
-                <li>❌ Sell or monetize your information</li>
+                <li>&#10060; Store your data on our servers</li>
+                <li>&#10060; Share your data with advertisers or data brokers</li>
+                <li>&#10060; Use your data for machine learning or AI training</li>
+                <li>&#10060; Sell or monetize your information</li>
             </ul>
         </div>
 
@@ -251,8 +259,8 @@
             <p>All data is stored locally on your device:</p>
             <ul>
                 <li><strong>Storage location:</strong> Chrome's chrome.storage.local API</li>
-                <li><strong>Encryption:</strong> API keys are encrypted before storage</li>
-                <li><strong>Access:</strong> Only Duly Noted extension can access this data</li>
+                <li><strong>Isolation:</strong> Data is stored in Chrome's sandboxed extension storage, accessible only to Duly Noted</li>
+                <li><strong>Access:</strong> Only the Duly Noted extension can access this data</li>
                 <li><strong>Persistence:</strong> Data persists until you delete it or uninstall the extension</li>
             </ul>
 
@@ -268,8 +276,9 @@
             <h3>3.3 Security Measures</h3>
             <ul>
                 <li><strong>No network transmission</strong> of voice data or drafts (except to your chosen third-party destinations)</li>
-                <li><strong>Secure token storage:</strong> OAuth tokens stored in chrome.storage.local (Chrome's encrypted storage)</li>
+                <li><strong>Secure token storage:</strong> OAuth tokens stored in Chrome's sandboxed chrome.storage.local, isolated from other extensions and websites</li>
                 <li><strong>OAuth 2.0 authentication:</strong> Industry-standard secure authentication flow</li>
+                <li><strong>Stateless token exchange:</strong> OAuth authorization codes are exchanged via a Cloudflare Worker that does not log or store any data</li>
                 <li><strong>Minimal permissions:</strong> Extension requests only necessary Chrome permissions (storage, sidePanel, identity)</li>
                 <li><strong>Open source:</strong> Code is publicly auditable on <a href="https://github.com/DavinciDreams/duly-noted" target="_blank">GitHub</a></li>
             </ul>
@@ -281,8 +290,8 @@
             <h3>4.1 Optional Integrations</h3>
             <p>Duly Noted integrates with third-party services <strong>at your discretion</strong>:</p>
             <ul>
-                <li><strong>GitHub (Issues & Projects):</strong> OAuth 2.0 authentication with minimal required permissions</li>
-                <li><strong>Notion (Databases & Pages):</strong> OAuth 2.0 authentication with workspace access</li>
+                <li><strong>GitHub (Issues &amp; Projects):</strong> OAuth 2.0 authentication with minimal required permissions</li>
+                <li><strong>Notion (Databases &amp; Pages):</strong> OAuth 2.0 authentication with workspace access</li>
             </ul>
             <p><strong>Permissions Requested:</strong></p>
             <ul>
@@ -305,7 +314,7 @@
                 <li>We use <strong>OAuth tokens</strong> you authorized for authentication</li>
                 <li>We <strong>do not share</strong> any other data (metadata, drafts, settings, etc.)</li>
                 <li>We <strong>do not track</strong> what you send or where you send it</li>
-                <li>All API calls are made <strong>directly from your browser</strong> to the third-party service (no intermediary servers)</li>
+                <li>API calls are made <strong>directly from your browser</strong> to the third-party service. OAuth token exchange uses a stateless Cloudflare Worker that processes authorization codes but does not store any data</li>
             </ul>
         </div>
 
@@ -324,7 +333,7 @@
             <p>You can delete your data at any time:</p>
             <ul>
                 <li><strong>Individual notes:</strong> Click delete icon in History</li>
-                <li><strong>All data:</strong> Settings → Reset to Defaults</li>
+                <li><strong>All data:</strong> Settings &rarr; Reset to Defaults</li>
                 <li><strong>Complete removal:</strong> Uninstall the extension</li>
             </ul>
 
