@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download Duly Noted - Free Chrome extension for capturing voice notes, screenshots, and sending them to GitHub, Notion, or local drafts.">
+    <title>Download Duly Noted - Install Guide</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function(){var t=localStorage.getItem('dn-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)})();
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <img src="duly-noted-logo.svg" alt="Duly Noted" class="logo-svg" />
+                    <span class="logo-text">Duly Noted</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#screenshots">Screenshots</a>
+                    <a href="index.html#how-it-works">How It Works</a>
+                </div>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+                        <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <svg class="theme-icon theme-icon-system" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Download Hero -->
+    <section class="download-hero">
+        <div class="container">
+            <div class="download-hero-content">
+                <h1 class="download-title">Install Duly Noted</h1>
+                <p class="download-subtitle">
+                    Duly Noted is currently in review for the Chrome Web Store.
+                    In the meantime, you can install it directly &mdash; it takes less than a minute.
+                </p>
+                <a href="duly-noted-v1.3.0.zip" download class="btn-large btn-primary download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download v1.3.0</span>
+                </a>
+                <p class="download-meta">ZIP file &bull; ~30 MB &bull; Works on Chrome, Edge, and Brave</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install Steps -->
+    <section class="install-steps">
+        <div class="container">
+            <h2 class="section-title">Installation Guide</h2>
+            <p class="section-subtitle">Follow these steps to load the extension manually</p>
+
+            <div class="install-grid">
+                <div class="install-step">
+                    <div class="install-step-number">1</div>
+                    <div class="install-step-content">
+                        <h3>Download &amp; Unzip</h3>
+                        <p>
+                            Click the download button above to get the ZIP file.
+                            Extract it to a folder you'll keep &mdash; the extension loads from this folder,
+                            so don't delete it after installing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="install-step-number">2</div>
+                    <div class="install-step-content">
+                        <h3>Open Extensions Page</h3>
+                        <p>
+                            In your browser, navigate to the extensions page:
+                        </p>
+                        <ul class="install-urls">
+                            <li><strong>Chrome:</strong> <code>chrome://extensions</code></li>
+                            <li><strong>Edge:</strong> <code>edge://extensions</code></li>
+                            <li><strong>Brave:</strong> <code>brave://extensions</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="install-step-number">3</div>
+                    <div class="install-step-content">
+                        <h3>Enable Developer Mode</h3>
+                        <p>
+                            Toggle the <strong>"Developer mode"</strong> switch in the top-right corner of the extensions page. This allows you to load unpacked extensions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="install-step-number">4</div>
+                    <div class="install-step-content">
+                        <h3>Load the Extension</h3>
+                        <p>
+                            Click <strong>"Load unpacked"</strong> in the top-left corner, then select the folder you extracted in step 1. Duly Noted will appear in your extensions list.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="install-step">
+                    <div class="install-step-number">5</div>
+                    <div class="install-step-content">
+                        <h3>Pin &amp; Launch</h3>
+                        <p>
+                            Click the puzzle piece icon in your toolbar and pin Duly Noted for quick access.
+                            Press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> to open the side panel instantly from any tab.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="install-faq">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Will I get updates?</h3>
+                    <p>
+                        Once Duly Noted is approved on the Chrome Web Store, you can switch to the store version for automatic updates. Until then, re-download and re-load to update.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is this safe?</h3>
+                    <p>
+                        Absolutely. Duly Noted is open source &mdash; you can
+                        <a href="https://github.com/DavinciDreams/duly-noted" target="_blank" rel="noopener noreferrer">review the code on GitHub</a>.
+                        All transcription happens locally on your device. No data is sent to external servers.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Why "Developer mode"?</h3>
+                    <p>
+                        Chrome requires Developer mode to install extensions outside the Web Store. This is standard practice for beta testing and is completely safe.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I see a warning?</h3>
+                    <p>
+                        Chrome may show a "Disable developer mode extensions" popup on startup. Just click the dismiss option. This goes away once the extension is on the Chrome Web Store.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="duly-noted-logo.svg" alt="Duly Noted Logo" class="logo-svg" />
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="support.html">Support</a>
+                    <a href="https://github.com/DavinciDreams/duly-noted" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Duly Noted. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
